@@ -29,7 +29,7 @@ public class LA5a
 
     public static int[] divide(int[] first, int[] second)
     {
-        if(second[0] == 0) return null;
+        if(second[0] == 0) throw new IllegalArgumentException("Can not divide by zero");
         
         //why rewrite code when it's already there. and we don't have to worry about garbage.
         return multiply(first, new int[] {second[1], second[0]});
