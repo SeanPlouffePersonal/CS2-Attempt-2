@@ -37,7 +37,7 @@ public class PA1b
      */
     private static double coinsToDollars(int pennies, int nickels, int dimes, int quarters)
     {
-    	return (pennies * PENNY)+(nickels * NICKEL)+(dimes * DIME)+(quarters * QUARTER);
+    	return Math.max((pennies * PENNY)+(nickels * NICKEL)+(dimes * DIME)+(quarters * QUARTER), 0);
     }
 
     /**
