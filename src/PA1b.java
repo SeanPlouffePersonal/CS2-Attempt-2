@@ -10,6 +10,10 @@ public class PA1b
 	
 	public static final Scanner USER_INPUT = new Scanner(System.in);
 	
+	/**
+	 * gets user input and outputs result
+	 * @param args
+	 */
     public static void main(String[] args)
     {
     	System.out.println("Enter number of quarters:");
