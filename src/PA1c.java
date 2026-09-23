@@ -74,7 +74,7 @@ public class PA1c {
     	
     	int cents = convertToInt(amount);
     	
-    	System.out.println(cents);
+    	cents = cents > 0? cents : 0;
     	
     	int amtQuarters = getMaxQuarters(cents);
     	cents -= amtQuarters*QUARTER;
@@ -86,7 +86,7 @@ public class PA1c {
     	cents -= amtNickels*NICKEL;
     	
     	int amtPennies = cents;
-
+    	
     	System.out.printf("You have %d quarters, %d dimes, %d nickels, %d pennies", amtQuarters, amtDimes, amtNickels, amtPennies);
     	
     }
