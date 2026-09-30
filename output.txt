@@ -1,0 +1,14 @@
+Word Frequency Report
+----------------------
+java: 3
+is: 2
+fun: 2
+powerful: 1
+anagrams: 1
+are: 1
+too: 1
+files: 2
+make: 1
+useful: 2
+programs: 1
+read: 1
