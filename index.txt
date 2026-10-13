@@ -1,3 +1,0 @@
-Java is fun. Java is powerful!
-Anagrams are fun, too.
-Files make Java useful; useful programs read files.

@@ -1,37 +1,36 @@
-# Lab Assignment 3 — Word Frequency Analyzer
+# Programming Assignment 2
 
-**COMP 1050 — Computer Science II**  
-**Estimated time:** 1 hour and 30 minutes  
-**Required submission:** `LA2.java`
+**COMP 1050 — Computer Science II**
 
-## Objective
+Complete all three programs in `src/main/java`. You may use any Java IDE, but course demonstrations use IntelliJ IDEA. Do not rename the classes or change the supplied public method signatures because Gradescope calls them directly.
 
-Create a program that reads a text file, counts each distinct word, prints a frequency report, and writes the same report to `output.txt`. Word matching must ignore capitalization and punctuation. Words must appear in the report in the order in which they first appear in the input file.
+## Part A — Credit Card Validation
 
-## Open the starter project
+Complete `PA2a.java`. Implement the helper methods in their listed order, then use them in `isValid` and `main`. Card input must contain 13–16 numeric digits, use a prefix of `4`, `5`, `37`, or `6`, and pass the Luhn checksum. Print exactly one of these status messages:
 
-1. Download and extract `Lab3_Student_Starter.zip`. Do not work inside the ZIP file.
-2. Open IntelliJ IDEA and select **Open**.
-3. Select the extracted `Lab3_Student_Starter` folder.
-4. Choose **Load Maven Project** if IntelliJ prompts you, and use Java 17 or newer.
-5. Open `src/main/java/LA2.java`. Complete each TODO without changing the required class or method names.
-6. Run `src/test/java/LA2Test.java` with the green test arrow.
+- `Status: Input is too short`
+- `Status: Input is too long`
+- `Status: Non-numeric input`
+- `Status: Invalid prefix`
+- `Status: card is valid`
+- `Status: card is invalid`
 
-The supplied `index.txt` file is located in the project’s main folder. Enter `index.txt` when the program asks for a filename.
+## Part B — Longest Repeating Sequence
 
-## Required methods
+Complete `PA2b.java`. First implement `hasSequence`, then use it to help implement `maxConsecutiveLength`. The maximum for an empty array is 0; an array with values always has a maximum of at least 1.
 
-- `public static String cleanWord(String token)` converts a token to lowercase and removes every character that is not an English letter from `a` through `z`.
-- `public static int findWord(String word, ArrayList<String> words)` returns the index of a word in the list or `-1` if the word is absent.
-- `public static String buildReport(String filename) throws FileNotFoundException` reads the file and returns the complete report. Use parallel `ArrayList` objects to store words and counts.
-- `public static void main(String[] args)` prompts for the input filename, prints the report, writes it to `output.txt`, and handles a missing file.
+## Part C — Matrix File Multiplication
 
-Use this exact missing-file message:
+Complete `PA2c.java`. Implement `canMultiply`, `readMatrix`, `matrixMultiply`, `printMatrix`, and `writeMatrix` before completing `main`. A matrix file contains its row count, column count, and integer entries in row-major order. Sample files are in `sample_files`.
 
-```text
-Error: File not found.
-```
+## Open and run in IntelliJ IDEA
 
-## Submission
+1. Download and extract the ZIP. Do not work inside the compressed ZIP.
+2. In IntelliJ IDEA, select **File → Open** and choose the extracted folder containing `pom.xml`.
+3. Choose **Trust Project** and **Load Maven Project** if prompted.
+4. Select JDK 17 or newer under **File → Project Structure → Project SDK**.
+5. Run each test class in `src/test/java`. Run each program separately to check its console behavior.
 
-Make sure the provided tests pass, save your work, and submit **only `LA2.java`** to Gradescope. Confirm that Gradescope displays the latest version of the file and review the autograder feedback before leaving the submission page.
+## Gradescope submission
+
+Submit `PA2a.java`, `PA2b.java`, and `PA2c.java` to Gradescope. You may submit the three Java files directly or place them in one ZIP. Do not submit `.class` files. Confirm that Gradescope finds all three files and displays an autograder result before leaving the page.
