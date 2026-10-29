@@ -6,7 +6,7 @@ public class PA2a
     {
     	try
     	{
-    		Integer.parseInt(number);
+    		int i = Integer.parseInt(number);
     		return true;
     	}
     	catch(NumberFormatException ignore)
@@ -68,12 +68,12 @@ public class PA2a
 
     public static int sumOfDoubleEvenPlace(String number)
     {
-    	return sumOfXPlace(number, 1, 2, 2);
+    	return sumOfXPlace(number, 0, 2, 2);
     }
 
     public static int sumOfOddPlace(String number)
     {
-        return sumOfXPlace(number, 0, 2, 1);
+        return sumOfXPlace(number, 1, 2, 1);
     }
     
     private static int sumOfXPlace(String number, int start, int step, int multi)
@@ -92,8 +92,18 @@ public class PA2a
     	return finalNumber;
     }
 
-    public static boolean isValid(String number) {
+    public static boolean isValid(String number)
+    {
         // TODO: Verify length, numeric input, prefix, and the Luhn checksum.
+    	
+    	if(number.length() < 13 || number.length() > 16) return false;
+    	
+    	if(!isNumeric(number)) return false;
+    	
+    	if(!hasValidPrefix(number)) return false;
+    	
+    	if( (sumOfDoubleEvenPlace(number) + sumOfOddPlace(number)) % 10 == 0) return true;
+    	
         return false;
     }
 
@@ -101,7 +111,33 @@ public class PA2a
     {
         Scanner input = new Scanner(System.in);
         
-        System.out.println(sumOfDoubleEvenPlace("123456789"));
+        System.out.print("Enter a credit card number: ");
+        String card = input.nextLine();
+
+        if(isValid(card))
+        {
+        	System.out.println("\nStatus: card is valid");
+        }
+        else
+        {
+        	if(card.length() < 13)
+        	{
+        		System.out.println("Status: Input is too short");
+        	}
+        	else if(card.length() > 16)
+        	{
+        		System.out.println("Status: Input is too long");
+        	}
+        	else if(!isNumeric(card))
+        	{
+        		System.out.println("Status: Non-numeric input");
+        	}
+        	else if(hasValidPrefix(card))
+        	{
+        		System.out.println("Status: Invalid prefix");
+        	}
+        }
+        
         
         // TODO: Prompt for a card number and print the correct status message.
         // Validate in this order: too short, too long, non-numeric, invalid prefix, Luhn result.
